@@ -1,0 +1,16 @@
+- przerzucic przyciski zmiany trybu na okn trybu 
+- zrobić kontrolki
+    przechylenia 
+    prędkości
+    kompas
+    wysokość
+    aktualne zadanie
+    tryb
+    ilosc satelit, tryb gps(3D FIX, 2D Fix, glonass, inne)
+    RSSI - Received Signal Strength Indication
+    stan baterii 
+    rozsuwane menu
+    ustawienie kamery ( iso, tryb kamera/aparat, przysłona)
+    miniaturka mapki na obrazie
+    miniaturka obrazu na mapce
+    
