@@ -14,3 +14,9 @@
     miniaturka mapki na obrazie
     miniaturka obrazu na mapce
     
+- podpiąć ffmpeg + obsługa
+- podpiąć google maps + obsługa
+
+
+- system parameters - xml
+- 

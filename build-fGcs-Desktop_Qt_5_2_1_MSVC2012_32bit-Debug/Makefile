@@ -178,7 +178,17 @@ Makefile: ..\fGCS\fGCS.pro D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\win32-msvc2012\qma
 		D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\yacc.prf \
 		D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\lex.prf \
 		..\fGCS\fGCS.pro \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKitWidgets.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Quick.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5MultimediaWidgets.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5OpenGL.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5PrintSupport.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Qml.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Multimedia.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKit.prl \
 		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Widgets.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Positioning.prl \
+		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Sensors.prl \
 		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Network.prl \
 		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Gui.prl \
 		D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Core.prl \
@@ -290,7 +300,17 @@ D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exceptions.prf:
 D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\yacc.prf:
 D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\lex.prf:
 ..\fGCS\fGCS.pro:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKitWidgets.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Quick.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5MultimediaWidgets.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5OpenGL.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5PrintSupport.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Qml.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Multimedia.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKit.prl:
 D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Widgets.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Positioning.prl:
+D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Sensors.prl:
 D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Network.prl:
 D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Gui.prl:
 D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Core.prl:

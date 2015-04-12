@@ -68,6 +68,28 @@ void mainWidget::setupUi(QWidget *Widget)
 
     gridLayout->addWidget(stackWidget, 1, 0, 1, 1);
 
+    //videoView = new VideoView(stackWidget);
+    //mapView = new MapView(stackWidget);
+
+
+//    stackWidget->addWidget(videoView);
+//    stackWidget->addWidget(mapView);
+    /////////////// 1st//////////////////
+    view = new QGraphicsView(stackWidget);
+    view->setBackgroundBrush(QColor("bisque"));
+
+    scene = new QGraphicsScene(stackWidget);
+    scene->setItemIndexMethod(QGraphicsScene::NoIndex);
+
+    /////////////// 2nd//////////////////
+    webView = new QWebView(stackWidget);
+    webView->setObjectName(QStringLiteral("webView"));
+    webView->setUrl(QUrl(QStringLiteral("about:blank")));
+    webView->setUrl(QUrl("google.pl"));
+
+    stackWidget->addWidget(view);
+    stackWidget->addWidget(webView);
+
     retranslateUi(Widget);
 }
 
@@ -87,13 +109,13 @@ void mainWidget::retranslateUi(QWidget *Widget)
 void mainWidget::changeCurrent(int idx)
 {
     qDebug()<<"change to "<<idx;
-//    if (stackWidget->currentWidget() !=0) {
-//        stackWidget->currentWidget()->setSizePolicy(QSizePolicy::Ignored,
-//                                                    QSizePolicy::Ignored);
-//    }
-//    stackWidget->setCurrentIndex(idx);
-//    stackWidget->currentWidget()->setSizePolicy(QSizePolicy::Expanding,
-//                                                QSizePolicy::Expanding);
+    if (stackWidget->currentWidget() !=0) {
+        stackWidget->currentWidget()->setSizePolicy(QSizePolicy::Ignored,
+                                                    QSizePolicy::Ignored);
+    }
+    stackWidget->setCurrentIndex(idx);
+    stackWidget->currentWidget()->setSizePolicy(QSizePolicy::Expanding,
+                                                QSizePolicy::Expanding);
     //adjustSize();
 }
 

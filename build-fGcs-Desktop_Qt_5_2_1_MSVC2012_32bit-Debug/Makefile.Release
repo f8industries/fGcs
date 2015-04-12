@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG
+DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WEBKIT_LIB -DQT_WIDGETS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -O2 -MD -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t -O2 -MD -GR -W3 -w34100 -w34189 -EHsc $(DEFINES)
-INCPATH       = -I"D:\BMSTS\Qt\5.2.1\msvc2012\include" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtNetwork" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtANGLE" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore" -I"release" -I"." -I"D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\win32-msvc2012"
+INCPATH       = -I"D:\BMSTS\Qt\5.2.1\msvc2012\include" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWebKitWidgets" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtQuick" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtMultimediaWidgets" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtOpenGL" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtPrintSupport" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtQml" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtMultimedia" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWebKit" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtPositioning" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtSensors" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtNetwork" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtANGLE" -I"D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore" -I"release" -I"." -I"D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\win32-msvc2012"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = qtmain.lib /LIBPATH:D:\BMSTS\Qt\5.2.1\msvc2012\lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Widgets.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Network.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Gui.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Core.lib libEGL.lib libGLESv2.lib gdi32.lib user32.lib 
+LIBS          = qtmain.lib /LIBPATH:D:\BMSTS\Qt\5.2.1\msvc2012\lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5WebKitWidgets.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Quick.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5MultimediaWidgets.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5OpenGL.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5PrintSupport.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Qml.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Multimedia.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5WebKit.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Widgets.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Positioning.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Sensors.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Network.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Gui.lib D:\BMSTS\Qt\5.2.1\msvc2012\lib\Qt5Core.lib libEGL.lib libGLESv2.lib gdi32.lib user32.lib 
 QMAKE         = D:\BMSTS\Qt\5.2.1\msvc2012\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -59,22 +59,22 @@ DESTDIR_TARGET = release\fGCS.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-{..\fGCS}.cpp{release\}.obj::
+{release}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{..\fGCS}.cc{release\}.obj::
+{release}.cc{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{..\fGCS}.cxx{release\}.obj::
+{release}.cxx{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{..\fGCS}.c{release\}.obj::
+{release}.c{release\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
@@ -99,22 +99,22 @@ DESTDIR_TARGET = release\fGCS.exe
 	$<
 <<
 
-{release}.cpp{release\}.obj::
+{..\fGCS}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.cc{release\}.obj::
+{..\fGCS}.cc{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.cxx{release\}.obj::
+{..\fGCS}.cxx{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.c{release\}.obj::
+{..\fGCS}.c{release\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
@@ -136,7 +136,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) fGCS.zip $(SOURCES) $(DIST) ..\fGCS\fGCS.pro D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\spec_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\common\shell-win32.conf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\qconfig.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axbase.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axbase_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axcontainer.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axcontainer_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axserver.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axserver_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bluetooth.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bluetooth_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bootstrap_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_clucene_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_concurrent.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_concurrent_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_core.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_core_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_declarative.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_declarative_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designer.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designer_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designercomponents_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_gui.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_gui_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_help.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_help_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimedia.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimedia_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimediawidgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_network.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_network_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_nfc.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_nfc_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_opengl.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_opengl_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_openglextensions.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_openglextensions_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_platformsupport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_positioning.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_positioning_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_printsupport.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_printsupport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qml.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qml_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmltest.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmltest_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quick.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quick_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quickparticles_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_script.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_script_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_scripttools.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_scripttools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sensors.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sensors_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_serialport.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_serialport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sql.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sql_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_svg.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_svg_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_testlib.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_testlib_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_uitools.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_uitools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkit.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkit_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkitwidgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_widgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_widgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_winextras.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_winextras_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xml.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xml_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xmlpatterns.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt_functions.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt_config.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\win32-msvc2012\qmake.conf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\spec_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exclusive_builds.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\default_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\default_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\resolve_config.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exclusive_builds_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\default_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\build_pass.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qml_debug.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\declarative_debug.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\rtti.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\warn_on.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\resources.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\moc.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\opengl.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\uic.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\windows.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\testcase_targets.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exceptions.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\yacc.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\lex.prf ..\fGCS\fGCS.pro D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Widgets.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Network.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Gui.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Core.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/libEGL.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/libGLESv2.prl  RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) fGCS.zip $(SOURCES) $(DIST) ..\fGCS\fGCS.pro D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\spec_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\common\shell-win32.conf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\qconfig.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axbase.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axbase_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axcontainer.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axcontainer_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axserver.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_axserver_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bluetooth.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bluetooth_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_bootstrap_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_clucene_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_concurrent.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_concurrent_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_core.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_core_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_declarative.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_declarative_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designer.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designer_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_designercomponents_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_gui.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_gui_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_help.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_help_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimedia.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimedia_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimediawidgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_network.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_network_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_nfc.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_nfc_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_opengl.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_opengl_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_openglextensions.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_openglextensions_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_platformsupport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_positioning.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_positioning_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_printsupport.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_printsupport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qml.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qml_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmltest.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qmltest_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quick.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quick_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_quickparticles_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_script.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_script_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_scripttools.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_scripttools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sensors.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sensors_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_serialport.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_serialport_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sql.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_sql_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_svg.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_svg_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_testlib.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_testlib_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_uitools.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_uitools_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkit.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkit_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkitwidgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_webkitwidgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_widgets.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_widgets_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_winextras.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_winextras_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xml.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xml_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xmlpatterns.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt_functions.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt_config.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\win32-msvc2012\qmake.conf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\spec_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exclusive_builds.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\default_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\default_pre.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\resolve_config.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exclusive_builds_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\default_post.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\build_pass.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qml_debug.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\declarative_debug.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\rtti.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\warn_on.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\qt.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\resources.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\moc.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\opengl.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\uic.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\win32\windows.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\testcase_targets.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\exceptions.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\yacc.prf D:\BMSTS\Qt\5.2.1\msvc2012\mkspecs\features\lex.prf ..\fGCS\fGCS.pro D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKitWidgets.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Quick.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5MultimediaWidgets.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5OpenGL.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5PrintSupport.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Qml.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Multimedia.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5WebKit.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Widgets.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Positioning.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Sensors.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Network.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Gui.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/Qt5Core.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/libEGL.prl D:/BMSTS/Qt/5.2.1/msvc2012/lib/libGLESv2.prl  RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.obj release\mainwidget.obj release\moc_mainwidget.obj
@@ -157,9 +157,9 @@ compiler_rcc_clean:
 compiler_moc_header_make_all: release\moc_mainwidget.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_mainwidget.cpp
-release\moc_mainwidget.cpp: D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+release\moc_mainwidget.cpp: D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QVariant \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobal.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qconfig.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfeatures.h \
@@ -167,7 +167,12 @@ release\moc_mainwidget.cpp: D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qprocessordetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcompilerdetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobalstatic.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbasicatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_bootstrap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qgenericatomic.h \
@@ -190,49 +195,56 @@ release\moc_mainwidget.cpp: D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_cxx11.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_gcc.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_unix.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbytearray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrefcount.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qarraydata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringbuilder.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlist.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qalgorithms.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiterator.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmetatype.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvarlengtharray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontainerfwd.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qisenum.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QAction \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qaction.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmargins.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrect.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsize.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpaintdevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpalette.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcolor.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qrgb.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qbrush.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qmatrix.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpolygon.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qregion.h \
@@ -242,29 +254,47 @@ release\moc_mainwidget.cpp: D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qimage.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpixmap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfont.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontmetrics.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qsizepolicy.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcursor.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurl.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurlquery.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfile.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfiledevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qvector2d.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qtouchdevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qicon.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qactiongroup.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QApplication \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qeventloop.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qguiapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qinputmethod.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QButtonGroup \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qbuttongroup.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QStackedWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qstackedwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qframe.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QGridLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qgridlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayoutitem.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qboxlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QHBoxLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QLabel \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlabel.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QPushButton \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qpushbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qabstractbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QSizePolicy \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QDebug \
 		..\fGCS\mainwidget.h
 	D:\BMSTS\Qt\5.2.1\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 $(INCPATH) ..\fGCS\mainwidget.h -o release\moc_mainwidget.cpp
 
@@ -285,9 +315,9 @@ compiler_clean: compiler_moc_header_clean
 ####### Compile
 
 release\main.obj: ..\fGCS\main.cpp ..\fGCS\mainwidget.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QVariant \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobal.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qconfig.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfeatures.h \
@@ -295,7 +325,12 @@ release\main.obj: ..\fGCS\main.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qprocessordetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcompilerdetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobalstatic.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbasicatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_bootstrap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qgenericatomic.h \
@@ -318,49 +353,56 @@ release\main.obj: ..\fGCS\main.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_cxx11.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_gcc.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_unix.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbytearray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrefcount.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qarraydata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringbuilder.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlist.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qalgorithms.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiterator.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmetatype.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvarlengtharray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontainerfwd.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qisenum.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QAction \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qaction.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmargins.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrect.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsize.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpaintdevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpalette.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcolor.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qrgb.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qbrush.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qmatrix.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpolygon.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qregion.h \
@@ -370,41 +412,52 @@ release\main.obj: ..\fGCS\main.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qimage.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpixmap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfont.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontmetrics.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qsizepolicy.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcursor.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurl.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurlquery.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfile.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfiledevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qvector2d.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qtouchdevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qicon.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qactiongroup.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QApplication \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qapplication.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreapplication.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qeventloop.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qdesktopwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qguiapplication.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qinputmethod.h
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qinputmethod.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QButtonGroup \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qbuttongroup.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QStackedWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qstackedwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qframe.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QGridLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qgridlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayoutitem.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qboxlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QHBoxLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QLabel \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlabel.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QPushButton \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qpushbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qabstractbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QSizePolicy \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QDebug
 
 release\mainwidget.obj: ..\fGCS\mainwidget.cpp ..\fGCS\mainwidget.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QVariant \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobal.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qconfig.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfeatures.h \
@@ -412,7 +465,12 @@ release\mainwidget.obj: ..\fGCS\mainwidget.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qprocessordetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcompilerdetection.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qglobalstatic.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbasicatomic.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_bootstrap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qgenericatomic.h \
@@ -435,49 +493,56 @@ release\mainwidget.obj: ..\fGCS\mainwidget.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_cxx11.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_gcc.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qatomic_unix.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmutex.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlogging.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qflags.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypeinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtypetraits.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsysinfo.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qbytearray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrefcount.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qnamespace.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qarraydata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstring.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qchar.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringbuilder.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlist.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qalgorithms.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiterator.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmetatype.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvarlengtharray.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontainerfwd.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qisenum.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobjectdefs_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreevent.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qscopedpointer.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qobject_impl.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QAction \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qaction.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qwindowdefs_win.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmargins.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qrect.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsize.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpoint.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpaintdevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpalette.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcolor.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qrgb.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringlist.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdatastream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qiodevice.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qpair.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qregexp.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qstringmatcher.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qbrush.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvector.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qmatrix.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpolygon.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qregion.h \
@@ -487,29 +552,47 @@ release\mainwidget.obj: ..\fGCS\mainwidget.cpp ..\fGCS\mainwidget.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qimage.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qpixmap.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qshareddata.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qsharedpointer_impl.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qhash.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfont.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontmetrics.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qfontinfo.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qsizepolicy.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qcursor.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qkeysequence.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qevent.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qvariant.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qmap.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qdebug.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qtextstream.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qlocale.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qset.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcontiguouscache.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurl.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qurlquery.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfile.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qfiledevice.h \
 		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qvector2d.h \
-		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qtouchdevice.h
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qtouchdevice.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qicon.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qactiongroup.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QApplication \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qcoreapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\qeventloop.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qguiapplication.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtGui\qinputmethod.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QButtonGroup \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qbuttongroup.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QStackedWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qstackedwidget.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qframe.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QGridLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qgridlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlayoutitem.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qboxlayout.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QHBoxLayout \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QLabel \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qlabel.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QPushButton \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qpushbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\qabstractbutton.h \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QWidget \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtWidgets\QSizePolicy \
+		D:\BMSTS\Qt\5.2.1\msvc2012\include\QtCore\QDebug
 
 release\moc_mainwidget.obj: release\moc_mainwidget.cpp 
 

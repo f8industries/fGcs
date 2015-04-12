@@ -12,6 +12,8 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QSizePolicy>
+#include <QWebView>
+#include <QtWidgets/QGraphicsView>
 #include <QDebug>
 
 class mainWidget : public QWidget
@@ -32,6 +34,10 @@ public:
     QLabel *label_2;
     QLabel *label;
     QStackedWidget *stackWidget;
+
+    QWebView *webView;
+    QGraphicsView *view;
+    QGraphicsScene *scene;
 
     void setupUi(QWidget *Widget);
     void retranslateUi(QWidget *Widget);
