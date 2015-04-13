@@ -19,4 +19,9 @@
 
 
 - system parameters - xml
+- chmurka komunikatów
 - 
+
+- create Layout
+- createVideoWidgets
+- createProxy

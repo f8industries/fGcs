@@ -27,17 +27,17 @@ void mainWidget::setupUi(QWidget *Widget)
     horizontalLayout = new QHBoxLayout();
 
     videoButton = new QPushButton(Widget);
-    videoButton->setObjectName(QStringLiteral("videoButton"));
+    videoButton->setObjectName(QStringLiteral("videoButton"));//przycisk zmiany widoku na video
 
     horizontalLayout->addWidget(videoButton);
 
     mapButton = new QPushButton(Widget);
-    mapButton->setObjectName(QStringLiteral("mapButton"));
+    mapButton->setObjectName(QStringLiteral("mapButton"));// przycisk zmiany widoku na mape
 
     horizontalLayout->addWidget(mapButton);
 
     testButton = new QPushButton(Widget);
-    testButton->setObjectName(QStringLiteral("testButton"));
+    testButton->setObjectName(QStringLiteral("testButton"));// jakis przycisk do testow
 
     horizontalLayout->addWidget(testButton);
 
@@ -64,28 +64,16 @@ void mainWidget::setupUi(QWidget *Widget)
     gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
     stackWidget = new QStackedWidget(Widget);
-    stackWidget->setObjectName(QStringLiteral("stackWidget"));
+    stackWidget->setObjectName(QStringLiteral("stackWidget"));  //  widget do zmiany widoków
 
     gridLayout->addWidget(stackWidget, 1, 0, 1, 1);
 
-    //videoView = new VideoView(stackWidget);
-    //mapView = new MapView(stackWidget);
+    view = new QGraphicsView(stackWidget);                      //widok na obraz z kamery
 
 
-//    stackWidget->addWidget(videoView);
-//    stackWidget->addWidget(mapView);
-    /////////////// 1st//////////////////
-    view = new QGraphicsView(stackWidget);
-    view->setBackgroundBrush(QColor("bisque"));
-
-    scene = new QGraphicsScene(stackWidget);
-    scene->setItemIndexMethod(QGraphicsScene::NoIndex);
-
-    /////////////// 2nd//////////////////
-    webView = new QWebView(stackWidget);
+    webView = new QWebView(stackWidget);                        //miejsce na google maps
     webView->setObjectName(QStringLiteral("webView"));
     webView->setUrl(QUrl(QStringLiteral("about:blank")));
-    webView->setUrl(QUrl("google.pl"));
 
     stackWidget->addWidget(view);
     stackWidget->addWidget(webView);
@@ -116,17 +104,14 @@ void mainWidget::changeCurrent(int idx)
     stackWidget->setCurrentIndex(idx);
     stackWidget->currentWidget()->setSizePolicy(QSizePolicy::Expanding,
                                                 QSizePolicy::Expanding);
-    //adjustSize();
 }
 
 void mainWidget::setVideoView()
 {
     changeCurrent(0);
-    qDebug()<<"videoView";
 }
 
 void mainWidget::setMapView()
 {
     changeCurrent(1);
-    qDebug()<<"mapView";
 }
