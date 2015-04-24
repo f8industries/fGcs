@@ -15,6 +15,9 @@
 #include <QWebView>
 #include <QtWidgets/QGraphicsView>
 #include <QDebug>
+#include "systemparameters.h"
+#include "videodecoder.h"
+#include "qcgaugewidget.h"
 
 class mainWidget : public QWidget
 {
@@ -43,9 +46,29 @@ public:
     void retranslateUi(QWidget *Widget);
     void changeCurrent(int idx);
 
+    void createUpperLayout(QWidget *Widget);
+    void createVideoView();
+    void createMapview();
+
+    void styleIt();
+
+    videoDecoder *video;
+
+    void setLayout();
+
+    void createGauge();
+
+    QcGaugeWidget * mAttitudeGauge;
+    QcNeedleItem * mAttitudeNeedle;
+    QcAttitudeMeter *mAttMeter;
+
+    void createConnections();
+
+
 public slots:
     void setMapView();
     void setVideoView();
+    void setGaugeValues(int i);
 };
 
 #endif // MAINWIDGET_H
